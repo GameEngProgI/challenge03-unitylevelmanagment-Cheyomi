@@ -4,6 +4,9 @@ public class LevelChangeTrigger : MonoBehaviour
 {
     public LevelManager levelManager;
 
+    public GameObject leveltoActivate;
+    public Transform spawnPoint;
+
     private void Start()
     {
         levelManager = ServiceHub.Instance.levelManager;
@@ -16,7 +19,7 @@ public class LevelChangeTrigger : MonoBehaviour
         {
             Debug.Log("Level Change Triggered");
             //tell the level manager to change levels
-            levelManager.LevelChange();
+            levelManager.LevelChange(leveltoActivate, spawnPoint);
         }
     }
 }
